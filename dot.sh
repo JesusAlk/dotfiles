@@ -6,7 +6,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc bash_local bash_profile bash_prompt exports aliases functions vimrc vim bin tmux.conf tmux icons colors xmobar.hs fluxbox gimp-2.8 wallpapers Xresources urxvt xinitrc conky gitconfig"
+files="bashrc bash_local bash_profile bash_prompt exports aliases functions vimrc vim bin tmux.conf tmux icons colors fluxbox gimp-2.8 wallpapers Xresources urxvt xinitrc conky gitconfig"
 
 # crear el directorio dotfiles_old en home
 echo "Creando el directorio $olddir para la copia de seguridad de los archivos de configuracion en ~"
