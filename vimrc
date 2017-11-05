@@ -44,6 +44,8 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 autocmd FileType htmldjango set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType elm set tabstop=2|set shiftwidth=2|set expandtab
 
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
 autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
 autocmd FileType python map <F5> :!tmux send-keys -t git_output "git --no-pager log -n 20 --oneline --graph --decorate" Enter<CR> && tmux send-keys -t git_output "q" Enter<CR> rautocmd FileType python map <F6> :!tmux send-keys -t testing "py.test " % Enter<CR>
 autocmd FileType python map <F6> :!tmux send-keys -t testing "py.test " % Enter<CR>
