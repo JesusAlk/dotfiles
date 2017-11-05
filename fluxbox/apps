@@ -1,0 +1,158 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=main-term)
+  [Workspace]	{0}
+  [Dimensions]	{780 1040}
+  [Position]	(UPPERLEFT)	{25 25}
+  [Deco]	{BORDER}
+  [Layer]	{2}
+[end]
+[app] (name=sec-term)
+  [Workspace]	{0}
+  [Dimensions]	{780 1040}
+  [Position]	(UPPERLEFT)	{855 25}
+  [Deco]	{BORDER}
+  [Layer]	{2}
+[end]
+[app] (name=dev-term)
+  [Workspace]	{1}
+  [Dimensions]	{1600 900}
+  [Position]	(UPPERLEFT)	{25 25}
+  [Deco]	{BORDER}
+  [Layer]	{2}
+[end]
+[app] (name=testing-term)
+  [Workspace]	{1}
+  [Dimensions]	{1900 1050}
+  [Position]	(UPPERLEFT)	{1900 25}
+  [Deco]	{BORDER}
+  [Layer]	{2}
+[end]
+[app] (title=XCOM Select)
+  [Workspace]	{5}
+  [FocusNewWindow]	{yes}
+  [Jump]	{yes}
+[end]
+[app] (title=.*[Xx]COM2.*)
+  [Workspace]	{5}
+  [FocusNewWindow]	{yes}
+  [Jump]	{yes}
+[end]
+[app] (title=.*[Pp]yChess.*)
+  [Workspace]	{5}
+  [Dimensions]	{1100 900}
+  [Position]	(UPPERLEFT)	{400 90}
+  [FocusNewWindow]	{yes}
+  [Jump]	{yes}
+[end]
+[app] (name=conky) (class=conky)
+  [Workspace]	{0}
+  [Position]	(UPPERLEFT)	{1658 0}
+  [Sticky]	{no}
+[end]
+[app] (title=.*[vV]ocal.*)
+  [Workspace]	{5}
+  [Dimensions]	{1100 900}
+  [Position]	(UPPERLEFT)	{400 90}
+  [Sticky]	{no}
+  [FocusNewWindow]	{yes}
+  [Jump]	{yes}
+[end]
+[app] (name=atom) (class=Atom) (role=browser-window)
+  [Workspace]	{5}
+  [Maximized]	{yes}
+[end]
+[app] (name=python3.4) (class=python3.4)
+  [Workspace]	{3}
+  [Close]	{yes}
+[end]
+[app] (name=Descent-Linux-Shipping) (class=Descent-Linux-Shipping)
+[end]
+[app] (name=python2.7) (class=python2.7)
+  [Workspace]	{3}
+  [Close]	{yes}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Workspace]	{4}
+  [Dimensions]	{41% 47%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Jump]	{yes}
+  [Close]	{yes}
+[end]
+[app] (name=transmission-remote-gtk) (class=Transmission-remote-gtk)
+  [Dimensions]	{100% 101%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Close]	{yes}
+[end]
+[app] (name=Xephyr) (class=Xephyr)
+  [Workspace]	{6}
+  [Dimensions]	{83% 98%}
+  [Shaded]	{no}
+  [Maximized]	{no}
+  [Fullscreen]	{no}
+  [Close]	{yes}
+  [Alpha]	{255}
+[end]
+[app] (name=Butter) (class=Butter)
+  [Workspace]	{5}
+  [Head]	{1}
+  [Deco]	{NORMAL}
+  [Sticky]	{no}
+  [Jump]	{yes}
+  [Close]	{yes}
+[end]
+[app] (title=.*[Vv]M Widget.*)
+  [Head]	{1}
+  [Position]	(UPPERLEFT)	{1658 625}
+  [Jump]	{yes}
+[end]
+[app] (name=freecad) (class=Freecad)
+  [Workspace]	{4}
+  [Head]	{1}
+  [Dimensions]	{100% 100%}
+  [Maximized]	{yes}
+  [Fullscreen]	{no}
+  [Layer]	{8}
+  [Close]	{yes}
+[end]
+[app] (name=Qt-subapplication) (class=VirtualBox)
+  [Workspace]	{6}
+  [Head]	{1}
+  [Dimensions]	{33% 51%}
+  [Position]	(UPPERLEFT)	{5% 5%}
+  [Maximized]	{yes}
+  [Fullscreen]	{no}
+  [Close]	{yes}
+[end]
+[app] (name=google-chrome) (class=Google-chrome) (role=browser)
+  [Workspace]	{2}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Maximized]	{yes}
+  [Deco]	{0x5e0}
+  [Close]	{yes}
+[end]
+[app] (title=.*[sS]potify.*)
+  [Workspace]	{4}
+  [Dimensions]	{100% 100%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Deco]	{NORMAL}
+  [Maximized]	{no}
+  [Fullscreen]	{no}
+  [Close]	{yes}
+[end]
+[app] (name=google.es) (class=Google-chrome) (role=pop-up)
+  [Workspace]	{1}
+  [Dimensions]	{47% 96%}
+  [Position]	(UPPERLEFT)	{51% 3%}
+  [Deco]	{NORMAL}
+  [Close]	{yes}
+[end]
+[app] (name=mail.google.com__mail_u_0) (class=Google-chrome) (role=pop-up)
+  [Workspace]	{1}
+  [Dimensions]	{46% 93%}
+  [Position]	(UPPERLEFT)	{51% 2%}
+  [Deco]	{BORDER}
+  [Close]	{yes}
+[end]

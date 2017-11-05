@@ -1,0 +1,21 @@
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[alias]
+	ctags = !.git/hooks/ctags
+	d = difftool
+	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	email = jesus.alkorta@gmail.com
+	name = Jesus
+[status]
+	submoduleSummary = true

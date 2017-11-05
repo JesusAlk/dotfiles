@@ -1,0 +1,45 @@
+*background: #0f0f0f
+*foreground: #c8c8c8
+
+!black
+*color0:  #251f1f
+*color8:  #5e5e5e
+!red
+*color1:  #eb4509
+*color9:  #eb4509
+!green
+*color2:  #94e76b
+*color10: #95e76b
+!yellow
+*color3:  #ffac18
+*color11: #ffac18
+!blue
+*color4:  #46aede
+*color12: #46aede
+!magenta
+*color5:  #e32c57
+*color13: #e32c57
+!cyan
+*color6:  #d6dbac
+*color14: #d6dbac
+!white
+*color7:  #efefef
+*color15: #efefef
+URxvt*scrollBar:  false
+URxvt*background:       rgba:0000/0000/0000/cccc
+URxvt.transparent:   true
+URxvt.tintColor:     white
+URxvt.shading:       20 
+URrxvt*depth: 32
+URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:Terminus:pixelsize=9,xft:Inconsolata\ for\ Powerline:pixelsize=9
+urxvt*boldFont: xft:DejaVu\ Sans\ Mono\ Bold\ for\ Powerline:Terminus:pixelsize=11,xft:Inconsolata\ for\ Powerline:pixelsize=11
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt*boldColors: on
+URxvt.perl-lib: ~/.urxvt/ext/
+URxvt.perl-ext: font-size
+URxvt.perl-ext-common:default,clipboard,matcher,font-size
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt*iso14755: False

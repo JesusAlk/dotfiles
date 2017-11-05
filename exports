@@ -1,0 +1,33 @@
+# Make vim the default editor
+export EDITOR="vim"
+export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:/opt/local/bin
+export EDITOR=vim
+export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="$PATH:/usr/bin/bin"
+unamestr=`uname`
+if [[ "$unamestr" == 'Darwin' ]]; then
+  export PATH="/usr/local/opt/node@6/bin:$PATH"
+fi
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Prefer US English and use UTF-8
+export LANG="es_ES"
+export LC_ALL="es_ES.UTF-8"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"

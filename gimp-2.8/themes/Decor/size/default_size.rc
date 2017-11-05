@@ -1,0 +1,280 @@
+# Flat theme
+# Copyright (c) 2013 Andrew Pullins
+
+# ---------------------------------------------------------------------
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# I have written comments to tell you what most everything does. I tryed
+# to state where you can see changes, what changes, and if I saw anything
+# else chaned. Some lines of code will change the color of many different
+# things.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/*
+  =====================================================================
+  GTK2 General Guidelines
+  =====================================================================
+
+  x/ythickness
+	This option is used in many places to determine padding between text
+	and border of widgets. For details see the geometry documentation of
+	the specific widgets. 
+
+  fg	Foreground color. Used for text on buttons. Also used for the button
+	borders in some engines.
+  bg	Background color. This is the background color of windows and buttons.
+  text	Text color for text input widgets and lists (/GtkTreeView).
+  base	Background color of text widgets and lists. 
+
+  NORMAL
+	The normal color, nothing special happening.
+
+  PRELIGHT
+	Prelight means mouse over effects. Usually the background will be
+	slightly lighter.
+
+  ACTIVE
+	This state is used for buttons while the mouse is pressed.
+
+  INSENSITIVE
+	Used for widgets that are insensitive and cannot be used at that point.
+
+  SELECTED
+	This state is used for example for selected text.
+
+  --------------------------
+  Sample Style of an Element
+  --------------------------
+
+  style "" = ""
+  {
+#	xthickness = 1
+#	ythickness = 1
+
+	fg[NORMAL]        = @green  #
+	fg[PRELIGHT]      = @green  #
+	fg[ACTIVE]        = @green  #
+	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @green  #
+
+	bg[NORMAL]        = @green  #
+	bg[PRELIGHT]      = @green  #
+	bg[ACTIVE]        = @green  #
+	bg[SELECTED]      = @green  #
+	bg[INSENSITIVE]   = @green  #
+
+	base[NORMAL]      = @green  #
+	base[PRELIGHT]    = @green  #
+	base[ACTIVE]      = @green  #
+	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @green  #
+
+	text[NORMAL]      = @green  #
+	text[PRELIGHT]    = @green  #
+	text[ACTIVE]      = @green  #
+	text[SELECTED]    = @green  #
+	text[INSENSITIVE] = @green  #
+  }
+
+ */
+
+/* ---------------------
+ * Theme starts here
+ * ---------------------
+ */
+
+# Default
+# =========================================================
+style "gimp-default-style"
+{
+	GtkButton      ::child-displacement-x = 1              # 
+	GtkButton      ::child-displacement-y = 1              # 
+	GtkButton      ::default_border       = { 0, 0, 0, 0 } # 
+#	GtkExpander    ::expander-size        = 16             # Tool Options - Dynamic Options Expander
+
+	GtkMenu        ::horizontal-padding   = 0              # Menu left/right padding
+	GtkMenu        ::vertical-padding     = 0              # Menu top/bottom padding
+
+	GtkMenuBar     ::internal-padding     = 0              #
+ 
+	GtkPaned       ::handle-size          = 8              # padding between panels, drag handle size
+
+	GtkRange       ::trough_border        = 0              #
+	GtkRange       ::slider_width         = 15             # 
+#	GtkRange       ::stepper_size         = 15             # Scrolbar stepper heiht
+ 
+	GtkScrollbar   ::min_slider_length    = 30             # 
+#	GtkScrollbar   ::has-backward-stepper   = 0               # Scrolbar Up/Left stepper
+#	GtkScrollbar   ::has-forward-stepper    = 0               # Scrolbar down/right stepper
+	GtkScrollbar   ::slider-width         = 15             # Scrolbar Width
+
+	GtkScale       ::slider-length        = 18             # Slider width
+	GtkScale       ::trough-side-details  = 1              # 
+
+#	GtkTreeView    ::expander_size        = 14             # Preferences item padding
+	GtkTreeView    ::vertical-separator   = 5              # Preferences item padding
+
+# Uncommenting this line allows to set a different (smaller) font for GIMP.
+#
+#	font_name = "sans 8"
+
+#	xthickness = 1
+#	ythickness = 1
+}
+
+
+
+# Statusbar
+# =========================================================
+style "gimp-statusbar" = "gimp-default-style"
+{
+#	xthickness = 5
+#	ythickness = 5
+}
+
+# Horizontal Sliders
+# =========================================================
+style "gimp-hslider" = "gimp-default-style"
+{
+#	xthickness = 3
+#	ythickness = 3
+}
+
+class "GtkHScale" style "gimp-hslider"
+
+# Virtical Sliders
+# =========================================================
+style "gimp-vslider" = "gimp-default-style"
+{
+#	xthickness = 3
+#	ythickness = 3
+}
+
+# Button Style
+# =========================================================
+style "gimp-button" = "gimp-default-style"
+{
+#	xthickness = 3
+#	ythickness = 3
+}
+
+# Entry up/down counter
+# =========================================================
+style "gimp-entry" = "gimp-default-style"
+{
+#	xthickness = 3
+#	ythickness = 3
+}
+
+# Checkboxs (this includes tools in the toolbox)
+# =========================================================
+style "gimp-check" = "gimp-button"
+{
+#	xthickness = 5
+#	ythickness = 5
+}
+
+# Panel Tabs
+# =========================================================
+style "gimp-panel" = "gimp-default-style"
+{
+	xthickness = 5
+	ythickness = 5
+}
+
+# Menus
+# =========================================================
+style "gimp-menu" = "gimp-default-style"
+{
+#	xthickness = 1
+#	ythickness = 1
+}
+
+# Menu Items
+# =========================================================
+style "gimp-menu-item" = "gimp-default-style"
+{
+	xthickness = 5
+	ythickness = 5
+}
+
+# Menu Bar
+# =========================================================
+style "gimp-menubar" = "gimp-default-style" {
+#	xthickness = 1
+#	ythickness = 1
+}
+
+# Progress Bar
+# =========================================================
+style "gimp-progressbar" = "gimp-default-style"
+{
+#	xthickness = 1
+#	ythickness = 1
+}
+
+# Scrollbar
+# =========================================================
+style "gimp-scrollbar" = "clearlooks-default"
+{
+#	xthickness = 1
+#	ythickness = 1
+}
+
+# "you can drop dockable dialogs here" text color
+# =========================================================
+style "gimp-drop-text-style" = "gimp-default-style"
+{
+}
+
+# Wilber color on empty image
+# =========================================================
+style "gimp-empty-image-style" = "gimp-default-style"
+{
+}
+
+# Tooltip Colors
+# =========================================================
+style "gimp-tooltips"  = "gimp-default-style"
+{
+	xthickness = 8
+	ythickness = 8
+}
+
+# Color Panel - GIMP HSVRGB buttons
+# =========================================================
+style "gimp-color-buttons"  = "gimp-default-style"
+{
+	xthickness = 4
+	ythickness = 4
+}
+
+widget_class "*<GimpColorNotebook>*<GtkRadioButton>" style "gimp-color-buttons"
+
+class "GtkWidget" style "gimp-default-style"
+class "GtkStatusbar"   style "gimp-statusbar"
+class "GtkVScale" style "gimp-vslider"
+class "GtkButton" style "gimp-button"
+class "GtkEntry"  style "gimp-entry"
+class "GtkCheckButton" style "gimp-check"
+class "GtkRadioButton" style "gimp-check"
+class "GtkNotebook"    style "gimp-panel"
+class "GtkMenu"   style "gimp-menu"
+class "GtkMenuItem"    style "gimp-menu-item"
+class "GtkMenuBar" style "gimp-menubar"
+class "GtkProgressBar" style "gimp-progressbar"
+class "GtkScrollbar" style "gimp-scrollbar"
+widget_class "*GimpPanedBox.GtkLabel" style:highest "gimp-drop-text-style"
+widget_class "*Canv*" style:highest "gimp-empty-image-style"
+widget "*gtk-tooltip*" style:highest "gimp-tooltips"

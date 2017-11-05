@@ -1,0 +1,49 @@
+
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "/home/jjalk/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+#
+# Debian-local change:
+#   - fbautostart has been added with a quick hack to check to see if it
+#     exists. If it does, we'll start it up by default.
+
+which fbautostart > /dev/null
+if [ $? -eq 0 ]; then
+    fbautostart
+fi
+ibus-daemon &
+xrandr --setprovideroutputsource 1 0
+xrandr --setprovideroutputsource 2 0
+xrandr --setprovideroutputsource 3 0
+# xrandr --output DVI-I-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x1080 --rotate normal
+xrandr --output DVI-I-1 --mode 1280x720 -r 60.00 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal
+feh --bg-scale ~/.wallpapers/hexagon.jpg && xrefresh
+command -v urxvtd && (urxvtd -q -f -o )
+command -v urxvtc && (urxvtc -name "main-term" )
+command -v urxvtc && (urxvtc -name "sec-term" )
+command -v urxvtc && (urxvtc -name "dev-term" )
+command -v urxvtc && (urxvtc -name "testing-term" )
+command -v conky  && (sleep 1 && conky -c ~/.conky/celiora &)
+xscreensaver -no-splash &
+exec ~/.dropbox-dist/dropboxd &
+exec /usr/lib/notification-daemon/notification-daemon &
+sleep 1
+
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/jjalk/.fluxbox/log"

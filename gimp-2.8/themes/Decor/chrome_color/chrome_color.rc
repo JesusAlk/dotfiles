@@ -1,0 +1,522 @@
+# Flat theme
+# Copyright (c) 2013 Andrew Pullins
+
+# ---------------------------------------------------------------------
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# I have written comments to tell you what most everything does. I tryed
+# to state where you can see changes, what changes, and if I saw anything
+# else chaned. Some lines of code will change the color of many different
+# things.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+/*
+  =====================================================================
+  GTK2 General Guidelines
+  =====================================================================
+
+  x/ythickness
+	This option is used in many places to determine padding between text
+	and border of widgets. For details see the geometry documentation of
+	the specific widgets. 
+
+  fg	Foreground color. Used for text on buttons. Also used for the button
+	borders in some engines.
+  bg	Background color. This is the background color of windows and buttons.
+  text	Text color for text input widgets and lists (/GtkTreeView).
+  base	Background color of text widgets and lists. 
+
+  NORMAL
+	The normal color, nothing special happening.
+
+  PRELIGHT
+	Prelight means mouse over effects. Usually the background will be
+	slightly lighter.
+
+  ACTIVE
+	This state is used for buttons while the mouse is pressed.
+
+  INSENSITIVE
+	Used for widgets that are insensitive and cannot be used at that point.
+
+  SELECTED
+	This state is used for example for selected text.
+
+  --------------------------
+  Sample Style of an Element
+  --------------------------
+
+  style "" = ""
+  {
+#	xthickness = 1
+#	ythickness = 1
+
+	fg[NORMAL]        = @green  #
+	fg[PRELIGHT]      = @green  #
+	fg[ACTIVE]        = @green  #
+	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @green  #
+
+	bg[NORMAL]        = @green  #
+	bg[PRELIGHT]      = @green  #
+	bg[ACTIVE]        = @green  #
+	bg[SELECTED]      = @green  #
+	bg[INSENSITIVE]   = @green  #
+
+	base[NORMAL]      = @green  #
+	base[PRELIGHT]    = @green  #
+	base[ACTIVE]      = @green  #
+	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @green  #
+
+	text[NORMAL]      = @green  #
+	text[PRELIGHT]    = @green  #
+	text[ACTIVE]      = @green  #
+	text[SELECTED]    = @green  #
+	text[INSENSITIVE] = @green  #
+  }
+
+ */
+
+/* ---------------------
+ * Theme starts here
+ * ---------------------
+ */
+
+# Default
+# =========================================================
+style "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color # Wilber, active tab text Enabled next/pre tab arrow
+	fg[PRELIGHT]      = @white # Panel text huver
+	fg[ACTIVE]        = @text_color # Inactive tab text, Panel selected item, selected checkbox and radio button text
+	fg[SELECTED]      = @white # Prefference - header text, Layers pannel - Opasity slider text
+	fg[INSENSITIVE]   = @inactive # Disabled next/pre tab arrow, Panel inactive item
+
+	bg[NORMAL]        = @main # Main Window Color
+	bg[PRELIGHT]      = @main # was #646464" (try #535353) # New image advanced options hover, Options pannel Dynamics
+	bg[SELECTED]      = @accent_color # preferences header and sliders, Panel sliders, selected check box/radiol button(Orange)
+	bg[INSENSITIVE]   = @button # preferences > Display - Entry buttons
+	
+	base[NORMAL]      = @text_box_color # Preferences text box background
+	base[PRELIGHT]    = @accent_color # 
+	base[ACTIVE]      = @accent_color # selection without focus
+	base[SELECTED]    = @accent_color # selected text and tabs
+	base[INSENSITIVE] = darker (@text_color) # inactive area, Inactive slider background - brush pannel
+	
+
+
+	text[NORMAL]      = @text_color # main text and borders
+	text[PRELIGHT]    = darker (@main) # prelight text
+	text[ACTIVE]      = @white # preferences active text
+	text[SELECTED]    = @white # preferences selected text
+	text[INSENSITIVE] = @text_color # filter/tag text
+
+
+}
+
+
+
+# Statusbar
+# =========================================================
+style "gimp-statusbar" = "gimp-default-style"
+{
+	base[NORMAL]      = darker (@text_color) # text box background
+}
+
+# Horizontal Sliders
+# =========================================================
+style "gimp-hslider" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color # Slider Text
+#	fg[PRELIGHT]      = @green #
+#	fg[ACTIVE]        = @green #
+#	fg[SELECTED]      = @green #
+	fg[INSENSITIVE]   = @inactive #
+
+	bg[NORMAL]        = @main # Slider Handle Color
+	bg[PRELIGHT]      = @accent_color # Navigation panel slider stepper color hover
+	bg[ACTIVE]        = @inactive # Right Slider Line
+	bg[SELECTED]      = @accent_color # navigation panel Slider left color
+	bg[INSENSITIVE]   = @inactive #
+	
+#	base[NORMAL]      = @green # 
+#	base[PRELIGHT]    = @green # 
+#	base[ACTIVE]      = @greem #
+#	base[SELECTED]    = @green #
+#	base[INSENSITIVE] = @green #
+	
+#	text[NORMAL]      = @green #
+#	text[PRELIGHT]    = @green #
+#	text[ACTIVE]      = @green #
+#	text[SELECTED]    = @green #
+#	text[INSENSITIVE] = @green #
+}
+
+class "GtkHScale" style "gimp-hslider"
+
+# Virtical Sliders
+# =========================================================
+style "gimp-vslider" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color # Slider Text
+#	fg[PRELIGHT]      = @green #
+#	fg[ACTIVE]        = @green #
+#	fg[SELECTED]      = @green #
+	fg[INSENSITIVE]   = @inactive #
+
+	bg[NORMAL]        = @main # Slider Handle Color
+	bg[PRELIGHT]      = @accent_color # color panel slider stepper color hover
+	bg[ACTIVE]        = @accent_color # color panel slider bottom color
+	bg[SELECTED]      = @inactive # Top Slider Line
+	bg[INSENSITIVE]   = @inactive #
+	
+#	base[NORMAL]      = @green # 
+#	base[PRELIGHT]    = @green # 
+#	base[ACTIVE]      = @greem #
+#	base[SELECTED]    = @green #
+	base[INSENSITIVE] = @inactive #
+	
+#	text[NORMAL]      = @green #
+#	text[PRELIGHT]    = @green #
+#	text[ACTIVE]      = @green #
+#	text[SELECTED]    = @green #
+	text[INSENSITIVE] = @inactive #
+}
+
+# Button Style
+# =========================================================
+style "gimp-button" = "gimp-default-style"
+{
+#	fg[NORMAL]        = @green  #
+#	fg[PRELIGHT]      = @green  #
+#	fg[ACTIVE]        = @green  #
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  #
+
+	bg[NORMAL]        = @button  # Button Color, Checkbox and Radio Button Border Color
+	bg[PRELIGHT]      = @button_hover  # Button Hover Color, Checkbox and Radio Button Border Hover Color
+	bg[ACTIVE]        = @button_hover  # Button Hover Select Color, Checkbox and Radio Button Border Select Color
+	bg[SELECTED]      = @button  #
+	bg[INSENSITIVE]   = @inactive  #
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green  #
+#	text[PRELIGHT]    = @green  #
+#	text[ACTIVE]      = @green  #
+#	text[SELECTED]    = @green  #
+}
+
+# Entry up/down counter
+# =========================================================
+style "gimp-entry" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color  # Entry up/down arrows
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  # Entry Up/Down Arrows Inactive
+
+	bg[NORMAL]        = @button  # Entry Up/Down Button Color
+#	bg[PRELIGHT]      = @green  #
+#	bg[ACTIVE]        = @green  #
+	bg[INSENSITIVE]   = @inactive  #
+
+	base[NORMAL]      = @text_box_color  # Entry Text box Background Color
+#	base[PRELIGHT]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+	text[NORMAL]      = @text_color  # Entry Text Color
+#	text[PRELIGHT]    = @green  #
+	text[ACTIVE]      = @white  # Inactive Hilighted Text color
+	text[SELECTED]    = @white  # selected Hilighted Text color
+	text[INSENSITIVE] = @inactive  #
+}
+
+# Checkboxs (this includes tools in the toolbox)
+# =========================================================
+style "gimp-check" = "gimp-button"
+{
+#	fg[NORMAL]        = @green  #
+#	fg[PRELIGHT]      = @green  #
+#	fg[ACTIVE]        = @green  #
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  #
+
+	bg[NORMAL]        = @accent_color # Checkbox Unselected border
+	bg[PRELIGHT]      = @main  # Checkbox text background hover
+	bg[ACTIVE]        = @inactive  #
+	bg[SELECTED]      = @accent_color # Checkbox box selected
+	bg[INSENSITIVE]   = @inactive  # Checkbox Inactive
+
+	base[NORMAL]      = @inactive  # Checkbox normal
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+	text[NORMAL]      = @white  # Checkbox check color
+	text[PRELIGHT]    = @white  # Checkbox check hover
+	text[ACTIVE]      = @white  # Checkbox check click
+	text[SELECTED]    = @white  # Checkbox selected
+	text[INSENSITIVE] = @inactive  # Checkbox Inactive
+}
+
+# Panel Tabs
+# =========================================================
+style "gimp-panel" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color  # panel next/pre arrow color
+	fg[PRELIGHT]      = @accent_color # panel next/pre arrow color hover
+	fg[ACTIVE]        = @accent_color # panel next/pre arrow color click
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive # Panel next/pre arrow color inactive
+
+	bg[NORMAL]        = @main # active tab
+#	bg[PRELIGHT]      = @green  #
+	bg[ACTIVE]        = @inactive # inactive tab
+	bg[SELECTED]      = @accent_color # tab highlight click
+	bg[INSENSITIVE]   = @inactive  #
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green # Normal tab text
+	text[PRELIGHT]    = @text_color # Hover tab text
+	text[ACTIVE]      = @text_color # Active tab text
+	text[SELECTED]    = @text_color # Selected tab text
+	text[INSENSITIVE] = @inactive # Inactive tab text
+}
+
+# Menus
+# =========================================================
+style "gimp-menu" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color  # Status Bar Pop UP Up/Down Button Arrow Color
+#	fg[ACTIVE]        = @green  #
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  #
+
+	bg[NORMAL]        = @main # Status Bar Pop Up Menu Background Color, Pannel Menu Background Color
+	bg[PRELIGHT]      = @main  # Status bar pop up down button hover
+	bg[ACTIVE]        = @accent_color # Status bar pop up down button arrow
+#	bg[SELECTED]      = @green  #
+	bg[INSENSITIVE]   = @main  # Status bar pop up up button inactive
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green  #
+#	text[PRELIGHT]    = @green  #
+#	text[ACTIVE]      = @green  #
+#	text[SELECTED]    = @green  #
+	text[INSENSITIVE] = @inactive  #
+}
+
+# Menu Items
+# =========================================================
+style "gimp-menu-item" = "gimp-default-style"
+{
+	fg[NORMAL]        = @text_color  # Panel Menu Arrow Color
+	fg[PRELIGHT]      = @white # Panel menu text hover
+	fg[ACTIVE]        = @red  #
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  # Panel Menu Inactive Text Color
+
+	bg[NORMAL]        = @text_color  # Panel menu separator
+#	bg[PRELIGHT]      = @green  #
+#	bg[ACTIVE]        = @green  #
+	bg[SELECTED]      = @main # Panel Menu Hilight Hover
+	bg[INSENSITIVE]   = @inactive  # Inactive Highlight Arrows
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+	text[NORMAL]      = @text_color  # Panel Menu Check Color
+	text[PRELIGHT]    = @text_color  # Panel Menu Check Hover
+	text[ACTIVE]      = @text_color  # Panel Menu Check 
+	text[SELECTED]    = @text_color  # Panel Menu Check Clicked
+	text[INSENSITIVE] = @inactive  # Panel Menu Check Inactive
+}
+
+# Menu Bar
+# =========================================================
+style "gimp-menubar" = "gimp-default-style" 
+{
+#	fg[NORMAL]        = @accent_color  #
+#	fg[PRELIGHT]      = @accent_color  #
+#	fg[ACTIVE]        = @accent_color  #
+#	fg[SELECTED]      = @accent_color  #
+#	fg[INSENSITIVE]   = @accent_color  #
+
+#	bg[NORMAL]        = @accent_color  #
+#	bg[PRELIGHT]      = @accent_color  #
+#	bg[ACTIVE]        = @accent_color  #
+#	bg[SELECTED]      = @accent_color  #
+#	bg[INSENSITIVE]   = @accent_color  #
+
+#	base[NORMAL]      = @accent_color  #
+#	base[PRELIGHT]    = @accent_color  #
+#	base[ACTIVE]      = @accent_color  #
+#	base[SELECTED]    = @accent_color  #
+#	base[INSENSITIVE] = @accent_color  #
+
+#	text[NORMAL]      = @text_color    # 
+#	text[PRELIGHT]    = @accent_color  #
+#	text[ACTIVE]      = @accent_color  #
+#	text[SELECTED]    = @accent_color  #
+#	text[INSENSITIVE] = @accent_color  #
+}
+
+# Progress Bar
+# =========================================================
+style "gimp-progressbar" = "gimp-default-style"
+{
+	fg[NORMAL]        = @black  # Progress bar normal text
+	fg[PRELIGHT]      = @white  # Progress bar text when progress bar covers text
+#	fg[ACTIVE]        = @green  #
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  #
+
+#	bg[NORMAL]        = @green  #
+#	bg[PRELIGHT]      = @green  #
+	bg[ACTIVE]        = @main # Progress bar background
+	bg[SELECTED]      = @accent_color # Progress bar color
+	bg[INSENSITIVE]   = @inactive  #
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green  # 
+#	text[PRELIGHT]    = @green  #
+#	text[ACTIVE]      = @green  #
+#	text[SELECTED]    = @green  #
+	text[INSENSITIVE] = @inactive  #
+}
+
+# Scrollbar
+# =========================================================
+style "gimp-scrollbar" = "clearlooks-default"
+{
+	fg[NORMAL]        = @text_color	# scrollbar arrows
+	fg[PRELIGHT]      = @accent_color # scrollbar arrows hover
+	fg[ACTIVE]     	  = @accent_color # scrollbar arrow click
+#	fg[SELECTED]      = @green  #
+	fg[INSENSITIVE]   = @inactive  #
+
+	bg[NORMAL]        = @main  # scrollbar bar
+	bg[PRELIGHT]	  = @accent_color # scrollbar bar hover
+	bg[ACTIVE]     	  = @accent_color # scrollbar bar click
+#	bg[SELECTED]      = @green  #
+	bg[INSENSITIVE]   = @inactive  #
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green  #
+#	text[PRELIGHT]    = @green  #
+#	text[ACTIVE]      = @green  #
+#	text[SELECTED]    = @green  #
+	text[INSENSITIVE] = @inactive  #
+}
+
+# "you can drop dockable dialogs here" text color
+# =========================================================
+style "gimp-drop-text-style" = "gimp-default-style"
+{
+	fg[NORMAL] = @main # Tool Box "you can drop docable dialogs here" Lable
+}
+
+# Wilber color on empty image
+# =========================================================
+style "gimp-empty-image-style" = "gimp-default-style"
+{
+	bg[NORMAL] = @inactive # canvas padding
+	fg[NORMAL] = @text_color # Wilber
+}
+
+# Tooltip Colors
+# =========================================================
+style "gimp-tooltips"  = "gimp-default-style"
+{
+	fg[NORMAL]           = @white # Tool tip text color
+	
+	bg[NORMAL]           = @accent_color # Tool tip color
+}
+
+# Color Panel - GIMP HSVRGB buttons
+# =========================================================
+style "gimp-color-buttons"  = "gimp-default-style"
+{
+#	fg[NORMAL]        = @green  #
+#	fg[PRELIGHT]      = @green  #
+#	fg[ACTIVE]        = @green  #
+#	fg[SELECTED]      = @green  #
+#	fg[INSENSITIVE]   = @inactive  #
+
+	bg[NORMAL]        = @button  # HSVRGB Button Color
+	bg[PRELIGHT]      = @button_hover  # HSVRGB Button Hover Color
+	bg[ACTIVE]        = @inactive  # HSVRGB Button Selected Color
+	bg[SELECTED]      = @accent_color  # HSVRGB Button Selected Border Color
+	bg[INSENSITIVE]   = @inactive  #
+
+#	base[NORMAL]      = @green  #
+#	base[PRELIGHT]    = @green  #
+#	base[ACTIVE]      = @green  #
+#	base[SELECTED]    = @green  #
+#	base[INSENSITIVE] = @inactive  #
+
+#	text[NORMAL]      = @green  #
+#	text[PRELIGHT]    = @green  #
+#	text[ACTIVE]      = @green  #
+#	text[SELECTED]    = @green  #
+#	text[INSENSITIVE] = @inactive  #
+}
+
+widget_class "*<GimpColorNotebook>*<GtkRadioButton>" style "gimp-color-buttons"
+
+class "GtkWidget" style "gimp-default-style"
+class "GtkStatusbar"   style "gimp-statusbar"
+class "GtkVScale" style "gimp-vslider"
+class "GtkButton" style "gimp-button"
+class "GtkEntry"  style "gimp-entry"
+class "GtkCheckButton" style "gimp-check"
+class "GtkRadioButton" style "gimp-check"
+class "GtkNotebook"    style "gimp-panel"
+class "GtkMenu"   style "gimp-menu"
+class "GtkMenuItem"    style "gimp-menu-item"
+class "GtkMenuBar" style "gimp-menubar"
+class "GtkProgressBar" style "gimp-progressbar"
+class "GtkScrollbar" style "gimp-scrollbar"
+widget_class "*GimpPanedBox.GtkLabel" style:highest "gimp-drop-text-style"
+widget_class "*Canv*" style:highest "gimp-empty-image-style"
+widget "*gtk-tooltip*" style:highest "gimp-tooltips"

@@ -1,0 +1,52 @@
+# Flat theme
+# Copyright (c) 2013 Andrew Pullins
+
+# ---------------------------------------------------------------------
+
+# This program is free software: you may modify and/or redistribute
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# I have written comments to tell you what most everything does. I tryed
+# to state where you can see changes, what changes, and if I saw anything
+# else chaned. Some lines of code will change the color of many different
+# things.
+
+# Color Scheme
+# =========================================================
+
+# Window color
+gtk_color_scheme = "main:#B8B8B8"			# Main background color
+gtk_color_scheme = "inactive:#868686"			# Inactive state
+gtk_color_scheme = "text_color:#404040"			# Text color
+gtk_color_scheme = "text_box_color:#A4A4A4"		# Text box color
+gtk_color_scheme = "button:#C0C0C0"			# button color
+gtk_color_scheme = "button_hover:#D2D2D2"		# button hover color
+
+gtk_color_scheme = "white:#ffffff"			# White
+gtk_color_scheme = "black:#000000"			# Black
+gtk_color_scheme = "accent_color:#f07746"		# Accent color
+
+# Test Colors
+gtk_color_scheme = "red:#FF0000"			# Red
+gtk_color_scheme = "green:#00FF00"			# Green
+
+# ---------------------------------------------------------------------#
+#                              Includs                                 #
+# ---------------------------------------------------------------------#                                
+
+include "imagerc"					# Icon Resource File
+include "../Decor/size/small_size.rc"			# Sice Resource File
+include "../Decor/chrome_color/chrome_color.rc"		# Chrome color Resource File
+
+# ---------------------------------------------------------------------#
+#                            End Includs                               #
+# ---------------------------------------------------------------------#

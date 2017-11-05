@@ -1,0 +1,13 @@
+[begin] (fluxbox)
+[submenu] (Browsers)
+      [exec]   (firefox) {firefox} </usr/share/pixmaps/firefox.png>
+      [exec]   (Google Chrome) {/usr/bin/google-chrome} </opt/google/chrome/product_logo_16.png>
+[end]
+[submenu] (Games)
+      [exec]   (Chess) {pychess}
+[end]
+[submenu] (Steam)
+      [exec]   (steam) {steam}
+[end]
+[include] (/etc/X11/fluxbox/fluxbox-menu)
+[end]
