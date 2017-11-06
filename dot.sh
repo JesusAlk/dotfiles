@@ -32,5 +32,5 @@ echo "copiando los directorios"
 for directory in $directories; do
     mv ~/.$directory ~/dotfiles_old/
     rm -rf ~/.$directory
-    mv $dir/$directory ~/.$directory
+    ln -s $dir/$directory ~/.$directory
 done
