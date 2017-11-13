@@ -41,6 +41,7 @@ autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
+autocmd FileType html set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType htmldjango set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType elm set tabstop=2|set shiftwidth=2|set expandtab
 
